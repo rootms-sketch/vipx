@@ -12,6 +12,8 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
+const { useState, useEffect, useMemo } = React;
+
 
 const API_URL = "https://script.google.com/macros/s/AKfycbyydxwPwgkJVPOlUGIA1K1BpcUVyy-gQoOTBoQVzXoXGccouHkL28K9JQ0_YO4PSdXU/exec"; // ← วาง URL ที่ได้จาก Apps Script ตรงนี้
 
@@ -59,7 +61,7 @@ const Card=({children,style={},glow,pink})=><div style={{background:C.card,borde
 
 const Insight=({icon,text})=><div style={{display:"flex",alignItems:"center",gap:10,padding:"10px 14px",borderRadius:12,background:"linear-gradient(90deg,rgba(139,43,226,0.08),rgba(233,30,140,0.04))",border:`1px solid rgba(139,43,226,0.12)`}}><span style={{fontSize:20}}>{icon}</span><span style={{fontSize:12,color:C.textD,lineHeight:1.4}}>{text}</span></div>;
 
-export default function App(){
+function App(){
   const [P,setP]=useState([]);
   const [loading,setLoading]=useState(true);
   const [fetchError,setFetchError]=useState(false);
@@ -535,13 +537,8 @@ export default function App(){
   );
 }
 
-  </script>
-  <script>
-    window.addEventListener('load', () => {
-      ReactDOM.createRoot(document.getElementById('root')).render(
-        React.createElement(App)
-      );
-    });
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
   </script>
 </body>
 </html>
