@@ -73,7 +73,8 @@ export default function App(){
     else{setLoginError(true);}
   };
 
-  const p=si>=0?P[si]:P[0];
+  const EMPTY={d:'',u:'',rl:0,tt:0,mt:0,wr:0,ws:0,md:0,dc:0,tb:0,gh:null,rs:null,gm:null,hd:null,bn:{rb:0,rl2:0,pt:0,j:0,rd:0,u:0},dp:{m:0,l:0},rp:0,rt:0,am:0,at:0};
+  const p=si>=0?P[si]:(P[0]||EMPTY);
   const bn=p.bn||{rb:0,rl2:0,pt:0,j:0,rd:0,u:0};
   const dp=p.dp||{m:0,l:0};
   const rank=getRank(p.rl);
